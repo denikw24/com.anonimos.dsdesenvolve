@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Página oficial de privacidade, termos e exclusão de conta do aplicativo NÔNIMOS."
+  >
+
+  <title>NÔNIMOS — Privacidade e Suporte</title>
+
+  <style>
+    :root {
+      --background: #07111f;
+      --surface: #111f33;
+      --surface-light: #182a43;
+      --primary: #985cff;
+      --secondary: #348cff;
+      --text: #f5f2ff;
+      --text-secondary: #c8c3d7;
+      --border: rgba(255, 255, 255, 0.09);
+      --danger: #ff5f76;
+      --success: #5dd6a2;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(152, 92, 255, 0.20),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(52, 140, 255, 0.16),
+          transparent 28%
+        ),
+        var(--background);
+
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      line-height: 1.65;
+    }
+
+    a {
+      color: #b89aff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      padding: 70px 20px 55px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 22px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--primary),
+          var(--secondary)
+        );
+
+      box-shadow:
+        0 18px 55px rgba(113, 67, 255, 0.38);
+
+      font-size: 42px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 8vw, 62px);
+      letter-spacing: 3px;
+    }
+
+    .tagline {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+
+    .adult-badge {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 15px;
+      border: 1px solid rgba(255, 95, 118, 0.4);
+      border-radius: 100px;
+      color: #ff9bac;
+      background: rgba(255, 95, 118, 0.10);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(7, 17, 31, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    nav a {
+      padding: 8px 14px;
+      border-radius: 100px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: white;
+      background: rgba(152, 92, 255, 0.17);
+      text-decoration: none;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 40px auto 80px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(24, 42, 67, 0.95),
+          rgba(13, 27, 46, 0.95)
+        );
+
+      box-shadow:
+        0 18px 60px rgba(0, 0, 0, 0.16);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    h3 {
+      margin-top: 28px;
+      color: #d8c9ff;
+    }
+
+    p,
+    li {
+      color: var(--text-secondary);
+    }
+
+    .highlight {
+      padding: 18px;
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      background: rgba(152, 92, 255, 0.10);
+    }
+
+    .warning {
+      padding: 18px;
+      border-left: 4px solid var(--danger);
+      border-radius: 12px;
+      background: rgba(255, 95, 118, 0.09);
+    }
+
+    .success {
+      padding: 18px;
+      border-left: 4px solid var(--success);
+      border-radius: 12px;
+      background: rgba(93, 214, 162, 0.09);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 14px;
+
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
+
+      font-weight: 700;
+      text-decoration: none;
+
+      box-shadow:
+        0 10px 30px rgba(96, 68, 255, 0.26);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 35px 20px 55px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .small {
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 48px;
+      }
+
+      section {
+        padding: 22px;
+        border-radius: 19px;
+      }
+
+      nav {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">🥷</div>
+
+    <h1>NÔNIMOS</h1>
+
+    <p class="tagline">
+      Fale sem medo. Seja ouvido.
+      Um espaço para desabafar, conversar e compartilhar
+      experiências sem expor sua identidade publicamente.
+    </p>
+
+    <div class="adult-badge">
+      Serviço exclusivo para maiores de 18 anos
+    </div>
+  </header>
+
+  <nav>
+    <a href="#privacidade">Privacidade</a>
+    <a href="#termos">Termos de Uso</a>
+    <a href="#diretrizes">Diretrizes</a>
+    <a href="#exclusao">Excluir conta</a>
+    <a href="#suporte">Suporte</a>
+  </nav>
+
+  <main>
+    <section id="privacidade">
+      <h2>Política de Privacidade</h2>
+
+      <p class="small">
+        Versão 1.0.0 — Última atualização: 1º de agosto de 2026
+      </p>
+
+      <div class="highlight">
+        O NÔNIMOS é desenvolvido e administrado por
+        <strong>Denilson Santos Schedule</strong>.
+        Para assuntos relacionados à privacidade, utilize:
+        <a href="mailto:nonimosapp@gmail.com">
+          nonimosapp@gmail.com
+        </a>.
+      </div>
+
+      <h3>1. Dados que podemos coletar</h3>
+
+      <p>
+        Para disponibilizar e proteger o aplicativo, podemos tratar:
+      </p>
+
+      <ul>
+        <li>e-mail e situação de verificação da conta;</li>
+        <li>identificador interno do Firebase;</li>
+        <li>nickname, avatar e descrição do perfil;</li>
+        <li>data de nascimento e confirmação de maioridade;</li>
+        <li>publicações, comentários e reações;</li>
+        <li>denúncias, bloqueios e registros de moderação;</li>
+        <li>preferências de notificações;</li>
+        <li>dados técnicos de acesso, dispositivo e segurança;</li>
+        <li>solicitações enviadas ao suporte.</li>
+      </ul>
+
+      <h3>2. Identidade pública</h3>
+
+      <p>
+        Outros usuários visualizam apenas seu nickname, avatar e
+        informações públicas permitidas pelo aplicativo.
+        Seu e-mail, sua data de nascimento e sua identidade real
+        não são exibidos publicamente.
+      </p>
+
+      <p>
+        O anonimato perante a comunidade não significa anonimato
+        perante a plataforma. Identificadores internos podem ser
+        mantidos para segurança, moderação, prevenção de fraude e
+        cumprimento de obrigações legais.
+      </p>
+
+      <h3>3. Finalidades do tratamento</h3>
+
+      <ul>
+        <li>criar, autenticar e proteger sua conta;</li>
+        <li>confirmar que o usuário possui 18 anos ou mais;</li>
+        <li>permitir publicações, comentários e interações;</li>
+        <li>processar denúncias e realizar moderação;</li>
+        <li>combater fraude, spam, ameaças e uso indevido;</li>
+        <li>enviar notificações solicitadas pelo usuário;</li>
+        <li>prestar suporte e corrigir falhas;</li>
+        <li>cumprir obrigações legais e proteger direitos.</li>
+      </ul>
+
+      <h3>4. Conteúdo sensível</h3>
+
+      <p>
+        Desabafos podem conter informações emocionais, pessoais ou
+        relacionadas à saúde, fornecidas voluntariamente pelo usuário.
+        Evite publicar nome completo, endereço, documentos, telefone,
+        dados médicos identificáveis ou informações pessoais de terceiros.
+      </p>
+
+      <h3>5. Serviços utilizados</h3>
+
+      <p>
+        O NÔNIMOS pode utilizar serviços do Google Firebase,
+        incluindo autenticação, banco de dados, armazenamento,
+        notificações, funções em nuvem e ferramentas de diagnóstico.
+      </p>
+
+      <p>
+        Esses fornecedores podem tratar dados em servidores localizados
+        fora do Brasil, conforme seus próprios termos, políticas e
+        mecanismos de proteção.
+      </p>
+
+      <h3>6. Compartilhamento</h3>
+
+      <p>
+        Não vendemos dados pessoais. Dados podem ser compartilhados
+        apenas quando necessário com fornecedores técnicos, prestadores
+        de serviço, autoridades competentes ou para cumprimento de
+        obrigação legal e proteção da comunidade.
+      </p>
+
+      <h3>7. Segurança</h3>
+
+      <p>
+        Adotamos medidas técnicas e administrativas para limitar acessos,
+        proteger contas, controlar permissões e reduzir riscos.
+        Entretanto, nenhum sistema conectado à internet é absolutamente
+        invulnerável.
+      </p>
+
+      <h3>8. Retenção e exclusão</h3>
+
+      <p>
+        Os dados são mantidos enquanto a conta estiver ativa ou enquanto
+        forem necessários para prestar o serviço, prevenir fraude,
+        investigar abusos, cumprir obrigações legais ou defender direitos.
+      </p>
+
+      <p>
+        Após a exclusão, alguns conteúdos podem ser apagados,
+        anonimizados ou preservados de forma limitada quando houver
+        necessidade jurídica ou de segurança.
+      </p>
+
+      <h3>9. Direitos do usuário</h3>
+
+      <p>
+        O usuário pode solicitar confirmação de tratamento, acesso,
+        correção, eliminação, anonimização, informação sobre
+        compartilhamento, portabilidade quando aplicável e revisão de
+        decisões automatizadas.
+      </p>
+
+      <p>
+        Envie sua solicitação para:
+        <a href="mailto:nonimosapp@gmail.com">
+          nonimosapp@gmail.com
+        </a>.
+      </p>
+
+      <h3>10. Pessoas menores de idade</h3>
+
+      <div class="warning">
+        O NÔNIMOS é destinado exclusivamente a pessoas com
+        <strong>18 anos ou mais</strong>.
+        Contas identificadas como pertencentes a menores poderão ser
+        bloqueadas ou excluídas.
+      </div>
+    </section>
+
+    <section id="termos">
+      <h2>Termos de Uso</h2>
+
+      <p class="small">
+        Versão 1.0.0 — Última atualização: 1º de agosto de 2026
+      </p>
+
+      <h3>1. Aceitação</h3>
+
+      <p>
+        Ao criar uma conta ou utilizar o NÔNIMOS, você declara ter
+        lido e aceitado estes Termos, a Política de Privacidade,
+        as Diretrizes da Comunidade e a Política de Moderação.
+      </p>
+
+      <h3>2. Requisito de idade</h3>
+
+      <p>
+        O serviço é exclusivo para maiores de 18 anos.
+        O fornecimento de informação falsa sobre a idade poderá
+        resultar no encerramento da conta.
+      </p>
+
+      <h3>3. Natureza do serviço</h3>
+
+      <p>
+        O NÔNIMOS é uma comunidade destinada a desabafos,
+        compartilhamento de experiências, conversas e apoio entre usuários.
+      </p>
+
+      <div class="warning">
+        O aplicativo não é serviço médico, psicológico ou psiquiátrico,
+        não substitui atendimento profissional e não funciona como canal
+        de emergência.
+      </div>
+
+      <h3>4. Responsabilidade pelo conteúdo</h3>
+
+      <p>
+        Cada usuário é responsável pelo conteúdo que publica.
+        O usuário autoriza o NÔNIMOS a armazenar, processar,
+        exibir e moderar o conteúdo dentro do funcionamento normal
+        do serviço.
+      </p>
+
+      <h3>5. Conteúdo proibido</h3>
+
+      <p>É proibido utilizar o NÔNIMOS para:</p>
+
+      <ul>
+        <li>ameaçar, perseguir ou assediar pessoas;</li>
+        <li>promover violência ou discriminação;</li>
+        <li>expor dados pessoais próprios ou de terceiros;</li>
+        <li>aplicar golpes, fraudes ou divulgar spam;</li>
+        <li>publicar conteúdo ilegal;</li>
+        <li>explorar ou sexualizar menores;</li>
+        <li>organizar atividades criminosas;</li>
+        <li>tentar descobrir ou divulgar a identidade de usuários;</li>
+        <li>personificar moderadores ou a administração;</li>
+        <li>burlar medidas de segurança ou moderação.</li>
+      </ul>
+
+      <h3>6. Moderação</h3>
+
+      <p>
+        Conteúdos podem ser analisados por sistemas automáticos e por
+        moderadores humanos. Publicações e contas podem ser advertidas,
+        limitadas, ocultadas, suspensas ou removidas quando houver
+        violação das regras ou risco à comunidade.
+      </p>
+
+      <h3>7. Denúncias</h3>
+
+      <p>
+        Usuários podem denunciar conteúdos ou contas.
+        Denúncias falsas, coordenadas ou abusivas também podem resultar
+        em medidas contra a conta denunciante.
+      </p>
+
+      <h3>8. Disponibilidade</h3>
+
+      <p>
+        O aplicativo poderá passar por manutenção, apresentar falhas,
+        modificar funcionalidades ou encerrar recursos.
+        Não garantimos funcionamento ininterrupto.
+      </p>
+
+      <h3>9. Encerramento da conta</h3>
+
+      <p>
+        O usuário pode solicitar a exclusão da própria conta.
+        A plataforma também poderá suspender ou encerrar contas que
+        violem estes Termos, apresentem risco à comunidade ou sejam
+        utilizadas por menores.
+      </p>
+
+      <h3>10. Contato</h3>
+
+      <p>
+        Dúvidas sobre estes Termos podem ser enviadas para
+        <a href="mailto:nonimosapp@gmail.com">
+          nonimosapp@gmail.com
+        </a>.
+      </p>
+    </section>
+
+    <section id="diretrizes">
+      <h2>Diretrizes da Comunidade</h2>
+
+      <div class="success">
+        O NÔNIMOS foi criado para permitir conversas sinceras,
+        respeitosas e protegidas.
+      </div>
+
+      <h3>O que esperamos</h3>
+
+      <ul>
+        <li>converse com respeito;</li>
+        <li>acolha relatos sensíveis;</li>
+        <li>discorde sem atacar;</li>
+        <li>denuncie conteúdos perigosos;</li>
+        <li>proteja sua identidade e a de terceiros;</li>
+        <li>respeite decisões de moderação.</li>
+      </ul>
+
+      <h3>O que não é permitido</h3>
+
+      <ul>
+        <li>ameaças ou incentivo à violência;</li>
+        <li>bullying, humilhação ou perseguição;</li>
+        <li>discurso de ódio;</li>
+        <li>exposição de telefone, endereço ou documentos;</li>
+        <li>golpes, spam ou propaganda abusiva;</li>
+        <li>conteúdo envolvendo exploração de menores;</li>
+        <li>tentativas de descobrir a identidade de alguém;</li>
+        <li>incentivo à automutilação ou a práticas perigosas;</li>
+        <li>personificação da equipe do NÔNIMOS.</li>
+      </ul>
+    </section>
+
+    <section id="exclusao">
+      <h2>Solicitação de exclusão de conta</h2>
+
+      <p>
+        Você pode iniciar a exclusão diretamente no aplicativo:
+      </p>
+
+      <div class="highlight">
+        Perfil → Configurações → Central de Privacidade →
+        Excluir minha conta
+      </div>
+
+      <p>
+        Caso não consiga acessar sua conta, envie a solicitação pelo
+        e-mail utilizado no cadastro.
+      </p>
+
+      <a
+        class="button"
+        href="mailto:nonimosapp@gmail.com?subject=Exclusão%20de%20conta%20-%20NÔNIMOS"
+      >
+        Solicitar exclusão por e-mail
+      </a>
+
+      <h3>O que acontece após a solicitação</h3>
+
+      <ul>
+        <li>o acesso à conta poderá ser encerrado;</li>
+        <li>o perfil público será removido;</li>
+        <li>o nickname poderá ser liberado;</li>
+        <li>dados pessoais serão eliminados ou anonimizados;</li>
+        <li>
+          registros necessários para segurança, investigação de abuso
+          ou cumprimento legal poderão ser preservados por período limitado;
+        </li>
+        <li>
+          publicações e comentários podem ser apagados ou exibidos como
+          pertencentes a uma conta excluída.
+        </li>
+      </ul>
+
+      <div class="warning">
+        A exclusão da conta é permanente e poderá não ser revertida.
+      </div>
+    </section>
+
+    <section id="suporte">
+      <h2>Suporte e contato</h2>
+
+      <p>
+        Para dúvidas, problemas técnicos, privacidade, denúncias ou
+        exclusão de conta:
+      </p>
+
+      <p>
+        <strong>Desenvolvedora:</strong>
+        Denilson Santos Schedule
+      </p>
+
+      <p>
+        <strong>E-mail:</strong>
+        <a href="mailto:nonimosapp@gmail.com">
+          nonimosapp@gmail.com
+        </a>
+      </p>
+
+      <a
+        class="button"
+        href="mailto:nonimosapp@gmail.com?subject=Suporte%20NÔNIMOS"
+      >
+        Entrar em contato
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 Denilson Santos Schedule.
+      Todos os direitos reservados.
+    </p>
+
+    <p class="small">
+      NÔNIMOS — Fale sem medo. Seja ouvido.
+    </p>
+  </footer>
+</body>
+</html>
